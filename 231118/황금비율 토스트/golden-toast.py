@@ -33,11 +33,11 @@ class DoublyLinkedList:
             self.tail.prev = new_node      # 맨 끝 dummy의 prev값을 새로운 노드로 변경합니다.
 
     def erase(self, node):
-        if node == self.end():
-            prev_node = node.prev
-            node.prev.next = None
-            self.tail = prev_node
-            return prev_node
+        # if node == self.end():
+        #     prev_node = node.prev
+        #     node.prev.next = None
+        #     self.tail = prev_node
+        #     return prev_node
         
         next_node = node.next
 
@@ -93,11 +93,10 @@ for i in range(m):
         it = it.prev
     elif order == 'R' and it != l.end():
         it = it.next
-    elif order == 'D':
+    elif order == 'D' and it != l.end():
         it = l.erase(it)
     elif order == 'P':
         l.insert(it, bread)
-        it = it.next
 
 it = l.begin()
 
